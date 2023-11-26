@@ -6,9 +6,9 @@ import org.apache.logging.log4j.Logger;
 import java.util.ArrayList;
 import java.util.Scanner;
 
-public class main {
+public class Main {
 
-    private static final Logger LOGGER = LogManager.getLogger(main.class);
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
     static Scanner scan = new Scanner(System.in);
     static AllRestaurant restaurant = new AllRestaurant();
    static DeliveryDetails customer = new DeliveryDetails();

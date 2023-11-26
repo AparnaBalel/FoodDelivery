@@ -1,0 +1,74 @@
+Going Beyond Testing: Why it is the Future of Quality Assurance
+By Software Testing Lead  November 8, 2023,
+Author: Dzmitry Seachouk, Lead QA Engineer at Solvd, Inc.
+
+The sphere of quality assurance has been going through major changes over the recent years. These changes are brought about by the shift of what exactly is understood by ‘quality’ in software development. New tech like the rapidly spreading use of AI, AR and ML is changing the digital landscape and how software is being tested. I think it is safe to say that over the recent years the very idea of quality transformed into something that is much bigger than just meeting certain functional and non-functional requirements. But the general software production concept is still the same – we have to make our product competitive on the market and user-friendly, we have to make it happen fast and it needs to earn money. QA still has to adhere to this approach.
+
+In this article, I’d like to lay out the principles of going beyond testing that have helped me to  build successful QA teams and establish QA workflows that were beneficial for the stakeholders, for the project as a whole, for the business and ultimately, helped create better products for the users. 
+
+Specifics of Understanding Quality today:
+It is sensitive to the specifics of a domain to which the software in question belongs.
+A quality piece of software adheres to modern trends in spheres that seem to have little to do with software development at first sight, such as environmental and social issues, sustainability. It’s good when QA engineers are in the know of such trends.
+Quality means that an app is on par with both business demands and with end-user expectations. 
+This makes QA specialists reconsider many traditional testing processes and in many of them – to go beyond testing. 
+
+QA Engineers Need Cross-functional Skillsets
+A phrase I hear often here in there from QA folks that makes me want to argue each time: but this is not a QA engineer task. I hear it spoken in many cases relating to anything that goes beyond standard activities associated with the job of a test engineer, a.k.a creating and running test cases. There’s a well-known and well-documented phenomenon, described in Andy Hunt’s book ‘Pragmatic Thinking and Learning’: to protest, workers start the ‘malicious obedience’ strike, where they follow exactly what their job description implies and no more. The result is always the same: a significant slowdown in all the processes, massive confusion and subpar performance results. This goes to illustrate the idea that the ‘beyond testing’ approach in QA is no longer a breakthrough, it is a must.
+
+Software development today is an extremely innovative field, and ‘standard’ is definitely not the word I would use when describing most of the projects I have worked on over the last few years. The question arises, why do we still think that using standard QA methods is enough then?
+
+Today, a successful QA strategy includes many techniques that are outside the box. A successful QA engineer, similarly, will have a cross-functional skill set. 
+
+A broader, user-centric outlook
+Developers need to dig very deep into the workings of the product. Unfortunately, it almost always brings about the side effect where they look at the product from the point of view of a so-called positive scenario, they look at it as a system. How will it function, what can it do? At the same time, product managers look at it as the means to address their business goals and their users’ pains. A good QA will bring a certain outlook that combines the two POVs and they will be able to look from various angles. Looking from a developer POV, they’re able to understand why a certain way of implementing a feature is selected. 
+
+Switching to a user POV, they will be able to see if it’s comfortable, clear and feasible to actually work with this implementation, considering a typical user archetype: their technical background, consumer habits, behavior. Thus, a good QA engineer is able to highlight discrepancies between several POVs and bring the development closer to a solution that fits both. And we all know that the later in the development cycle the issue is addressed, the more expensive it is to fix.
+
+Knowledge of adjacent spheres
+To acquire this kind of outlook, a QA engineer needs to have some knowledge of business analysis, of project management, product studies, domain specifics and even consumer psychology.  A QA engineer always works in a close tandem with analysts, product managers, delivery managers, designers, technical writers and other teams, so it is inevitable that they will have some ground knowledge of these domains. 
+
+Soft skills
+Going beyond testing to contribute to a project’s success puts QA engineers’ soft skills at the front. Empathy, ability to mediate, and establishing working communication with other teams are all put to test in a QA engineer’s line of work. 
+
+Why Product-oriented Approach is Vital in QA
+For a QA engineer, a product-oriented mindset becomes essential. Today, a successful product doesn’t just perform according to a list of functional expectations. It also covers certain business needs, it helps businesses to earn, it helps users perform certain tasks. Some of these needs, pains, goals have more priority and weight than others and the way they are addressed in an application will have a major impact on how the application is received. And all of this has to be covered with tests, but with this type of priorities and impact in mind. 
+
+Product-oriented Manual Testing
+
+While QA automation is more straight-forward in terms of business goals and more complex in technical implementation, manual testing needs to be more versatile and calls for empathy for users and defining value for everyone involved. Moreover, automation tests are applied when a product already exists in some functional form. At the earliest stages of development there’s nothing for automation tests to run on, but manual QA with a product-oriented approach will be able to spot out flaws in the very processes or cause-effect connections of the future product. One of the basics of such an approach is that not everything can be emulated and not everything even should be.  In the triangle of ‘resources – team – time’ resources is not always the cornerstone. 
+
+Here’s an example from my practice. We tested an application which essentially was a collaboration between a sportswear brand and a manufacturer of electronic devices for health and sports metrics. The app was heavily covered with automated tests, but when we started testing the smart watch device hands-on, we realized that emulators give out false data in many cases. In fact, technically the data would be correct, but outside of the real-life context it made no sense. For instance, the app would advise  a user to speed up when their pulse was already 160. We were able to find this out only when testing with real sportsmen in real-life situations. Technically speaking such tests would be outside a software QA scope, but where end-users’ well-being is at stake, the decision not to rely on emulators alone was crucial. 
+
+Product-oriented Decision Making
+
+From creating a test strategy for a product to executing particular scenarios, product-oriented thinking helps a QA engineer make correct decisions.For example, when we make a test strategy, testing core functionality would always be different from testing peripherals. But it requires us to know what is a core functionality for each particular product in question, what functionality will drive the profit for the future app. 
+
+What I mean is that core functionality can be different for end-users and for businesses. For example, social networks monetize their applications by showing commercial ads to their end-users. While functionality that deals with loading, displaying and managing ads is not relevant to end-users, it is crucial for the application owners nonetheless. QA engineers see these differences and prioritize testing efforts accordingly.
+
+To define this, as a QA engineer, I need to be knowledgeable about a lot of things that are outside the strictly QA sphere, such as industry specifics for the project, target audience and typical user archetypes and behavior, business expectations. This type of product-oriented information will help you to set clear priorities and  make correct choices.
+
+Transitioning from Test Cases to Test Scenarios
+
+To accommodate this approach, in my work I try to steer away from traditional test cases. Instead, I shift towards test scenarios that could cover several cases, both generic and marginal, and consider user behavior patterns. Another tool that you could use is test matrixes, because they allow you to minimize the total number of test cases and match them to as many requirements and user scenarios as possible.
+
+Product-oriented Handling of Bugs
+
+One other thing that distinguishes a QA engineer with a product-oriented approach is their treatment of bugs. The same bug that can be viewed as small and insignificant in terms of general software performance and software development, can create a huge issue for the business. Something like an interface typo can be easily fixed from the technical point of view, but if it creates a sensitive content issue, it could cause a social backlash that would be detrimental, and then the fix will be much more complicated. To understand this level of detail, a QA engineer has to have a deeper level of involvement in the product, they have to know how to detect such issues, which opinions and counsel they need to seek out.
+
+Principles of Going Beyond Testing in Today’s Fast-Paced Development Cycles
+I’d like to pinpoint several practical applications of ‘Going Beyond Testing’ principles that are especially important for agile and CI/CD environments. 
+
+Test early, test often
+In fact, start testing at the stage of when the team is just drawing system requirements documentation. A QA engineer may have questions developers won’t think about because of the differences in their professional mindset, at the earliest stages of development. These questions always need to be asked and addressed. This requires dipping your toes in business analysis, but always worth it as an additional skill for a QA engineer.  A seasoned QA engineer will be able to point out the flaws in requirement priority, gaps in user personas and help prevent defects before they even see the light of day. Testing often goes in line with the very principles of CI/CD and allows to filter out defects in a most effective way.
+
+Forget the word ‘standard’
+Like I have already mentioned, and I’d like to reiterate that, most successful software applications today are non-standard in one way or another. More often than not, in many ways. Innovation in development always requires innovative approaches in testing. If you feel that a certain way of trying things out goes beyond the regular ken of a QA engineer, the feeling is often deceptive. It’s a great opportunity to try and figure out something new and get experience that will be unique for your niche.
+
+Advocate for end users and for business
+Where stakeholders hold business interests in mind and UX designers think like end-users, a QA engineer can find a link between the two sets of development goals and requirements and solutions that would cater to both camps. Optimization of team efforts is one of the aims of any QA strategy, but when you optimize, you should always do it as a compromise and a crossing of solutions for end-user pains and needs and business goals. 
+
+Ensure Good Collaboration
+Quality is usually the result of a joint effort on the side of development, management, design, analysis, QA and all other teams involved in the process. In a way, going beyond testing for a QA engineer is also being a good communicator, a mediator and sometimes even a diplomat. Having such a member on the team will also help everyone else be on the same page about development processes. 
+
+Conclusion:
+Proactive QA today plays an important role in the product value chain. It drives value through extensive testing, by expanding the idea of quality itself beyond just meeting product requirements, and by aligning the product with larger business strategies and goals. QA engineers should go beyond testing with an open mind, navigating between business requirements and end-user needs. The approach of going beyond testing helps QA engineers develop an outlook that combines multiple points of view and helps the entire development process to produce solutions that help businesses earn and create positive user experience.
