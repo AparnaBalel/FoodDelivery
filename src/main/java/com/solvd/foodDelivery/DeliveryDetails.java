@@ -4,19 +4,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Scanner;
 
-public class DeliveryDetails extends Customer implements DriverDetails, Payment {
+public class DeliveryDetails {
    Scanner scan = new Scanner(System.in);
-    @Override
-    public void customerDetails(String name, String address) {
-    }
-    @Override
-    public void paymentMethod(String cardNumber, String expiryDate) {
-
-    }
-    @Override
-    public void driverDetail(String driverName, String carNumber) {
-    }
-
     public void waitTime() {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyy hh:mm:ss");
@@ -42,7 +31,7 @@ public class DeliveryDetails extends Customer implements DriverDetails, Payment 
         } catch (StringIndexOutOfBoundsException e) {
             System.out.println("*******StringIndexOutOfBoundsException*******");
         }
-       customerDetails(name,address);
+      // customerDetails(name,address);
         System.out.println("please enter your card number");
         String number = scan.nextLine();
         try {
@@ -55,10 +44,10 @@ public class DeliveryDetails extends Customer implements DriverDetails, Payment 
         }
         System.out.println("please enter expiry date");
         String date = scan.nextLine();
-        paymentMethod(number, date);
+       // paymentMethod(number, date);
         System.out.println();
         System.out.println(name + "," + address);
-        driverDetail("jacob","abd122dd");
+        //driverDetail("jacob","abd122dd");
         System.out.println("delivery time 10 minutes ");
         waitTime();
     }

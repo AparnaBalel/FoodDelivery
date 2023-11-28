@@ -1,116 +1,51 @@
 package com.solvd.foodDelivery;
 
+import com.solvd.foodDelivery.food.FoodItem;
+import com.solvd.foodDelivery.food.Lunch;
+import com.solvd.foodDelivery.order.LunchOrder;
+import com.solvd.foodDelivery.order.Order;
+import com.solvd.foodDelivery.payment.Card;
+import com.solvd.foodDelivery.payment.Payment;
+import com.solvd.foodDelivery.users.Customer;
+import com.solvd.foodDelivery.users.DeliveryPerson;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
 
     private static final Logger LOGGER = LogManager.getLogger(Main.class);
     static Scanner scan = new Scanner(System.in);
-    static AllRestaurant restaurant = new AllRestaurant();
-   static DeliveryDetails customer = new DeliveryDetails();
-    static ArrayList<Object> list = new ArrayList<>();
 
     public static void main(String[] args) {
-        LOGGER.info("worked");
-        orderFood();
-        System.out.println("do you want to add more food items?");
+        LOGGER.info("what would you like to order?");
         String order = scan.nextLine();
-        if (order.equalsIgnoreCase("yes")) {
-            orderFood();
-            System.out.println("do you want to add more food items?");
-            String addmore = scan.nextLine();
-            if (addmore.equalsIgnoreCase("yes")){
-                orderFood();
-            }
-            else if (addmore.equalsIgnoreCase("no")) {
-                customer.OrderDetails();
-                for (Object fruit : list) {
-                    double total = 0;
-                    System.out.println("this is your order details: " + fruit);
-                }
-        }}
-        else if (order.equalsIgnoreCase("no")) {
-             customer.OrderDetails();
-            for (Object fruit : list) {
-                double total = 0;
-                System.out.println("this is your order details: " + fruit);
-            }
-         }
-        System.out.print("yay! free dessert for you"+ ":"+restaurant.getBaskinRobin());
+        FoodItem lunch = new Lunch(order,10);
+        LOGGER.info(" would you like to add something to drink?");
+        String drink= scan.nextLine();
+        FoodItem Drink = new Lunch(drink,10);
+        LOGGER.info(" please enter your name");
+        String fullName= scan.nextLine();
+        LOGGER.info(" please enter delivery address");
+        String address= scan.nextLine();
+        LOGGER.info(" please enter contact number");
+        String number= scan.nextLine();
+        Customer name = new Customer(fullName,address,number);
+        LOGGER.info("please enter your card number ");
+        String card= scan.nextLine();
+        LOGGER.info("please enter your card expiry date ");
+        String date= scan.nextLine();
+        Payment creditCard = new Card(card, date);
+        List <FoodItem> lunchOrder = new ArrayList<>();
+        lunchOrder.add(lunch);
+        lunchOrder.add(Drink);
+        DeliveryPerson deliveryPerson = new DeliveryPerson("John Jacob", "1234567891","12ab34cd");
+        Order orderDetails = new LunchOrder(name ,lunchOrder,1,creditCard,deliveryPerson);
+        orderDetails.displayOrderDetails();
+        orderDetails.processPayment();
+
     }
-
-        static void orderFood() {
-            restaurant.all();
-           // ArrayList<Object> list = new ArrayList<>();
-            System.out.println("choose want you want to order from list");
-            String choose = scan.nextLine();
-            switch (choose) {
-                case "breakfast":
-                    restaurant.breakfast();
-                    String breakfast = scan.nextLine();
-                    if (breakfast.equalsIgnoreCase("omelette")) {
-                        list.add(restaurant.Omelette());
-                    } else if (breakfast.equalsIgnoreCase("pancake")) {
-                        list.add(restaurant.Pancake());
-                    }
-                    break;
-                case "lunch":
-                    restaurant.Lunch();
-                    String lunch = scan.nextLine();
-                    if (lunch.equalsIgnoreCase("soup")) {
-                        list.add(restaurant.Soup());
-                    } else if (lunch.equalsIgnoreCase("pizza")) {
-                        list.add(restaurant.pizza());
-                    }
-                    break;
-                case "dinner":
-                    restaurant.Dinner();
-                    String dinner = scan.nextLine();
-                    if (dinner.equalsIgnoreCase("Lasagna")) {
-                        list.add(restaurant.Lasagna());
-                    } else if (dinner.equalsIgnoreCase("Ravioli")) {
-                        list.add(restaurant.Ravioli());
-                    }
-                    break;
-                case "sides":
-                    restaurant.Sides();
-                    String sides = scan.nextLine();
-                    if (sides.equalsIgnoreCase("fries")) {
-                        list.add(restaurant.Fries());
-                    } else if (sides.equalsIgnoreCase("fruit cup")) {
-                        list.add(restaurant.FruitCup());
-                    }
-                    break;
-                case "dessert":
-                    restaurant.Dessert();
-                    String dessert = scan.nextLine();
-                    if (dessert.equalsIgnoreCase("chocolate Cake")) {
-                        list.add(restaurant.chocolateCake());
-                    } else if (dessert.equalsIgnoreCase("ice Cream")) {
-                        list.add(restaurant.iceCream());
-                    }
-                    break;
-                case "drinks":
-                    restaurant.Drinks();
-                    String drinks = scan.nextLine();
-                    if (drinks.equalsIgnoreCase("soda")) {
-                        list.add(restaurant.FountainSoda());
-                    } else if (drinks.equalsIgnoreCase("coffee")) {
-                        list.add(restaurant.Cappuccino());
-                    }
-                    break;
-            }
-            for (Object fruit : list) {
-                double total = 0;
-                System.out.println("successfully added to list: " + fruit);
-
-            }
-        }
-
-
-
 }
