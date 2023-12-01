@@ -1,5 +1,6 @@
 package com.solvd.foodDelivery.order;
 
+import com.solvd.foodDelivery.payment.StateTax;
 import com.solvd.foodDelivery.users.DeliveryPerson;
 import com.solvd.foodDelivery.food.FoodItem;
 import com.solvd.foodDelivery.payment.Payment;
@@ -9,24 +10,37 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 public abstract class Order {
     private static final Logger LOGGER = LogManager.getLogger(Order.class);
-
     protected Customer customer;
     protected List<FoodItem> foodItems;
     protected  int quantity;
     protected Payment payment;
+    protected StateTax stateTax;
     protected DeliveryPerson deliveryPerson;
     private LocalDateTime orderTime;
 
-    public Order(Customer customer, List<FoodItem> foodItems, int quantity, Payment payment, DeliveryPerson deliveryPerson) {
-        this.customer = customer;
+    public Order() {
+        this.foodItems = new ArrayList<>();
+    }
+
+    public Order(List<FoodItem> foodItems) {
         this.foodItems = foodItems;
+    }
+
+    public Order(int quantity) {
         this.quantity = quantity;
-        this.payment = payment;
+    }
+
+    public Order(Customer customer) {
+        this.customer = customer;
+    }
+
+    public Order(DeliveryPerson deliveryPerson) {
         this.deliveryPerson = deliveryPerson;
     }
 
@@ -34,8 +48,16 @@ public abstract class Order {
         return deliveryPerson;
     }
 
-    public void setDeliveryPerson(DeliveryPerson deliveryPerson) {
-        this.deliveryPerson = deliveryPerson;
+    public Order(Payment payment) {
+        this.payment = payment;
+    }
+
+    public Order(StateTax stateTax) {
+        this.stateTax = stateTax;
+    }
+
+    public Order(LocalDateTime orderTime) {
+        this.orderTime = LocalDateTime.now();
     }
 
     public Customer getCustomer() {
@@ -88,7 +110,7 @@ public abstract class Order {
         LOGGER.info("Customer detail " + customer );
         LOGGER.info("Your total Order:");
         for (FoodItem item : foodItems) {
-            LOGGER.info(item.foodName());
+            LOGGER.info(item.getFoodName());
         }
         LOGGER.info("Quantity: " + quantity);
         LOGGER.info("Total Price: $" + calculateTotal());

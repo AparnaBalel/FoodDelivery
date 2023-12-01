@@ -11,12 +11,12 @@ public class Lunch implements FoodItem {
     }
 
     @Override
-    public String foodName() {
+    public String getFoodName() {
         return foodName;
     }
 
     @Override
-    public double foodPrice() {
+    public double getFoodPrice() {
         return price;
     }
 }

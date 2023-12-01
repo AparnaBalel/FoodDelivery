@@ -10,15 +10,14 @@ import java.util.List;
 public class BreakfastOrder extends Order{
     private static final double DELIVERY_CHARGE = 5.0;
 
-    public BreakfastOrder(Customer customer, List<FoodItem> foodItems, int quantity, Payment payment, DeliveryPerson deliveryPerson) {
-        super(customer, foodItems, quantity, payment, deliveryPerson);
+    public BreakfastOrder(List<FoodItem> foodItems, int quantity) {
+        super(foodItems, quantity);
     }
-
     @Override
     public double calculateTotal() {
         double total = 0;
         for (FoodItem item : foodItems) {
-            total += item.foodPrice();
+            total += item.getFoodPrice();
         }
         return total * quantity + DELIVERY_CHARGE;
     }

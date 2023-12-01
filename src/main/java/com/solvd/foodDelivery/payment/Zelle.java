@@ -24,6 +24,6 @@ public class Zelle implements Payment{
     @Override
     public void Payment(double amount) {
         LOGGER.info("Processing Zelle payment of $" + amount);
-        LOGGER.info("Zelle payment successful!");
+        LOGGER.info("Phone Number: " + phoneNumber);
     }
 }

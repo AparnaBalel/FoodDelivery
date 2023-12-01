@@ -4,9 +4,7 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 public class Card implements Payment {
-
     private static final Logger LOGGER = LogManager.getLogger(Card.class);
-
     private String cardNumber;
     private String expiryDate;
 

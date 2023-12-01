@@ -1,9 +1,7 @@
-package com.solvd.foodDelivery;
+package com.solvd.foodDelivery.order;
 
 import com.solvd.foodDelivery.food.FoodItem;
 import com.solvd.foodDelivery.food.Lunch;
-import com.solvd.foodDelivery.order.LunchOrder;
-import com.solvd.foodDelivery.order.Order;
 import com.solvd.foodDelivery.payment.Card;
 import com.solvd.foodDelivery.payment.Payment;
 import com.solvd.foodDelivery.users.Customer;
@@ -15,9 +13,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
-public class Main {
-
-    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+public class FoodDelivery {
+    private static final Logger LOGGER = LogManager.getLogger(FoodDelivery.class);
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
@@ -33,7 +30,7 @@ public class Main {
         String address= scan.nextLine();
         LOGGER.info(" please enter contact number");
         String number= scan.nextLine();
-        Customer name = new Customer(fullName,address,number);
+        Customer name = new Customer(fullName, address);
         LOGGER.info("please enter your card number ");
         String card= scan.nextLine();
         LOGGER.info("please enter your card expiry date ");
@@ -42,8 +39,8 @@ public class Main {
         List <FoodItem> lunchOrder = new ArrayList<>();
         lunchOrder.add(lunch);
         lunchOrder.add(Drink);
-        DeliveryPerson deliveryPerson = new DeliveryPerson("John Jacob", "1234567891","12ab34cd");
-        Order orderDetails = new LunchOrder(name ,lunchOrder,1,creditCard,deliveryPerson);
+        DeliveryPerson deliveryPerson = new DeliveryPerson("John Jacob", 1234567891,"12ab34cd");
+        Order orderDetails = new LunchOrder();
         orderDetails.displayOrderDetails();
         orderDetails.processPayment();
 

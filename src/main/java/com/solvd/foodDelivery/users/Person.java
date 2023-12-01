@@ -1,20 +1,15 @@
 package com.solvd.foodDelivery.users;
 
-public abstract class Person {
+public abstract class Person<T> {
     private String name;
-    private String address;
-    private String phoneNumber;
+    private T contactInfo;
 
-    public Person(String name, String phoneNumber) {
+    public Person(String name, T contactInfo) {
         this.name = name;
-        this.phoneNumber = phoneNumber;
+        this.contactInfo = contactInfo;
     }
 
-    public Person(String name, String address, String phoneNumber) {
-        this.name = name;
-        this.address = address;
-        this.phoneNumber = phoneNumber;
-    }
+    public abstract void displayInfo();
 
     public String getName() {
         return name;
@@ -24,28 +19,11 @@ public abstract class Person {
         this.name = name;
     }
 
-    public String getPhoneNumber() {
-        return phoneNumber;
+    public T getContactInfo() {
+        return contactInfo;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getAddress() {
-        return address;
-    }
-
-    public void setAddress(String address) {
-        this.address = address;
-    }
-
-    @Override
-    public String toString() {
-        return "Person{" +
-                "name='" + name + '\'' +
-                ", address='" + address + '\'' +
-                ", phoneNumber='" + phoneNumber + '\'' +
-                '}';
+    public void setContactInfo(T contactInfo) {
+        this.contactInfo = contactInfo;
     }
 }

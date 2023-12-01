@@ -9,16 +9,12 @@ import java.util.List;
 
 public class DinnerOrder extends Order{
     private static final double DELIVERY_CHARGE = 5.0;
-
-    public DinnerOrder(Customer customer, List<FoodItem> foodItems, int quantity, Payment payment, DeliveryPerson deliveryPerson) {
-        super(customer, foodItems, quantity, payment, deliveryPerson);
-    }
     @Override
     public double calculateTotal() {
 
         double total = 0;
         for (FoodItem item : foodItems) {
-            total += item.foodPrice();
+            total += item.getFoodPrice();
         }
         return total * quantity + DELIVERY_CHARGE;
     }

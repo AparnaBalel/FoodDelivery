@@ -4,29 +4,18 @@ public class FastFood implements FoodItem {
     private String foodName;
     private double price;
 
-    public String getFoodName() {
-        return foodName;
-    }
-
-    public void setFoodName(String foodName) {
+    public FastFood(String foodName, double price) {
         this.foodName = foodName;
-    }
-
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
         this.price = price;
     }
 
     @Override
-    public String foodName() {
+    public String getFoodName() {
         return foodName;
     }
 
     @Override
-    public double foodPrice() {
+    public double getFoodPrice() {
         return price;
     }
 }

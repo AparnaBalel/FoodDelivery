@@ -1,12 +1,11 @@
 import org.apache.commons.io.FileUtils;
-import org.apache.commons.io.output.StringBuilderWriter;
 import org.apache.commons.lang3.StringUtils;
 
 import java.io.*;
 import java.util.List;
 
 
-public class main {
+public class Main {
     public static void main(String[] args) {
 
         int totalWords = 0;

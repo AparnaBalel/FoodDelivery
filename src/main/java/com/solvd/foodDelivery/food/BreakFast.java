@@ -8,13 +8,14 @@ public class BreakFast implements FoodItem {
         this.foodName = foodName;
         this.price = price;
     }
+
     @Override
-    public String foodName() {
+    public String getFoodName() {
         return foodName;
     }
 
     @Override
-    public double foodPrice() {
+    public double getFoodPrice() {
         return price;
     }
 }
