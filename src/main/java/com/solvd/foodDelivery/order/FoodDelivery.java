@@ -14,7 +14,7 @@ import java.util.List;
 import java.util.Scanner;
 
 public class FoodDelivery {
-    private static final Logger LOGGER = LogManager.getLogger(FoodDelivery.class);
+    private static final Logger LOGGER = LogManager.getLogger(FoodDelivery.class);//
     static Scanner scan = new Scanner(System.in);
 
     public static void main(String[] args) {
