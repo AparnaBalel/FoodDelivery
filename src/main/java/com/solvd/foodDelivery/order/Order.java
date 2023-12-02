@@ -20,24 +20,15 @@ public abstract class Order {
     protected List<FoodItem> foodItems;
     protected  int quantity;
     protected Payment payment;
-    protected StateTax stateTax;
     protected DeliveryPerson deliveryPerson;
     private LocalDateTime orderTime;
 
-    public Order() {
-        this.foodItems = new ArrayList<>();
-    }
-
-    public Order(List<FoodItem> foodItems) {
-        this.foodItems = foodItems;
-    }
-
-    public Order(int quantity) {
-        this.quantity = quantity;
-    }
-
     public Order(Customer customer) {
         this.customer = customer;
+    }
+    public Order(List<FoodItem> foodItems, int quantity) {
+        this.foodItems = foodItems;
+        this.quantity = quantity;
     }
 
     public Order(DeliveryPerson deliveryPerson) {
@@ -50,10 +41,6 @@ public abstract class Order {
 
     public Order(Payment payment) {
         this.payment = payment;
-    }
-
-    public Order(StateTax stateTax) {
-        this.stateTax = stateTax;
     }
 
     public Order(LocalDateTime orderTime) {

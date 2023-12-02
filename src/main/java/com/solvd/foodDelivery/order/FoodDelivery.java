@@ -40,9 +40,7 @@ public class FoodDelivery {
         lunchOrder.add(lunch);
         lunchOrder.add(Drink);
         DeliveryPerson deliveryPerson = new DeliveryPerson("John Jacob", 1234567891,"12ab34cd");
-        Order orderDetails = new LunchOrder();
-        orderDetails.displayOrderDetails();
-        orderDetails.processPayment();
+
 
     }
 }
