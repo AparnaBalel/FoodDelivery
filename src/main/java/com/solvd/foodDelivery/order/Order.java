@@ -30,7 +30,6 @@ public abstract class Order {
         this.foodItems = foodItems;
         this.quantity = quantity;
     }
-
     public Order(DeliveryPerson deliveryPerson) {
         this.deliveryPerson = deliveryPerson;
     }

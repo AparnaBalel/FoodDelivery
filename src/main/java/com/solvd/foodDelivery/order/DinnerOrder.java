@@ -21,7 +21,7 @@ public class DinnerOrder extends Order{
     }
 
     public DinnerOrder(Payment payment, StateTax stateTax) {
-        super(payment, stateTax);
+        super(payment);
     }
 
     public DinnerOrder(DeliveryPerson deliveryPerson) {

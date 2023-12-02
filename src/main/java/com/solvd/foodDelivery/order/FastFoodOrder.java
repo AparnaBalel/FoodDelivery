@@ -21,7 +21,7 @@ public class FastFoodOrder extends Order{
     }
 
     public FastFoodOrder(Payment payment, StateTax stateTax) {
-        super(payment, stateTax);
+        super(payment);
     }
 
     public FastFoodOrder(DeliveryPerson deliveryPerson) {
