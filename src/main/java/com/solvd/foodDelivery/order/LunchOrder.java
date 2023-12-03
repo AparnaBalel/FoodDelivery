@@ -1,7 +1,6 @@
 package com.solvd.foodDelivery.order;
 
 import com.solvd.foodDelivery.food.FoodItem;
-import com.solvd.foodDelivery.food.Lunch;
 import com.solvd.foodDelivery.payment.Payment;
 import com.solvd.foodDelivery.payment.StateTax;
 import com.solvd.foodDelivery.users.Customer;
@@ -21,7 +20,7 @@ public class LunchOrder extends  Order{
         super(foodItems, quantity);
     }
 
-    public LunchOrder(Payment payment, StateTax stateTax) {
+    public LunchOrder(Payment payment) {
         super(payment);
     }
 
@@ -39,7 +38,7 @@ public class LunchOrder extends  Order{
         for (FoodItem item : foodItems) {
             total += item.getFoodPrice();
         }
-        return total * quantity + DELIVERY_CHARGE;
+        return total * quantity + StateTax.STATE_TAX_7.calculateTax(total)+ DELIVERY_CHARGE;
     }
 
 }

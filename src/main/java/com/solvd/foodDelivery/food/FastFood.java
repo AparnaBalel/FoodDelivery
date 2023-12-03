@@ -16,6 +16,6 @@ public class FastFood implements FoodItem {
 
     @Override
     public double getFoodPrice() {
-        return price;
+        return generateRandomPrice(3,12);
     }
 }

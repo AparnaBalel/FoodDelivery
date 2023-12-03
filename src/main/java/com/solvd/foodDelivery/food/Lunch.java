@@ -9,7 +9,6 @@ public class Lunch implements FoodItem {
         this.foodName = foodName;
         this.price = price;
     }
-
     @Override
     public String getFoodName() {
         return foodName;
@@ -17,6 +16,6 @@ public class Lunch implements FoodItem {
 
     @Override
     public double getFoodPrice() {
-        return price;
+        return generateRandomPrice(10,20);
     }
 }

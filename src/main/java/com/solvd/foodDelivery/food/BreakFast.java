@@ -16,7 +16,7 @@ public class BreakFast implements FoodItem {
 
     @Override
     public double getFoodPrice() {
-        return price;
+        return generateRandomPrice(7, 15);
     }
 }
 

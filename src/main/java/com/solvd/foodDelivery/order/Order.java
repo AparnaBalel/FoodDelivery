@@ -33,13 +33,12 @@ public abstract class Order {
     public Order(DeliveryPerson deliveryPerson) {
         this.deliveryPerson = deliveryPerson;
     }
+    public Order(Payment payment) {
+        this.payment = payment;
+    }
 
     public DeliveryPerson getDeliveryPerson() {
         return deliveryPerson;
-    }
-
-    public Order(Payment payment) {
-        this.payment = payment;
     }
 
     public Order(LocalDateTime orderTime) {

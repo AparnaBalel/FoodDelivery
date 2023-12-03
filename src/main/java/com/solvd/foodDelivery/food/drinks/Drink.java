@@ -19,7 +19,7 @@ public class Drink implements FoodItem {
 
     @Override
     public double getFoodPrice() {
-        return price;
+        return generateRandomPrice(3,6);
     }
 
     public DrinkSize getSize() {

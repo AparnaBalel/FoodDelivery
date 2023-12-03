@@ -20,7 +20,7 @@ public class DinnerOrder extends Order{
         super(foodItems, quantity);
     }
 
-    public DinnerOrder(Payment payment, StateTax stateTax) {
+    public DinnerOrder(Payment payment) {
         super(payment);
     }
 
@@ -39,6 +39,6 @@ public class DinnerOrder extends Order{
         for (FoodItem item : foodItems) {
             total += item.getFoodPrice();
         }
-        return total * quantity + DELIVERY_CHARGE;
+        return total * quantity + StateTax.STATE_TAX_7.calculateTax(total)+ DELIVERY_CHARGE;
     }
 }
