@@ -3,11 +3,12 @@ package com.solvd.foodDelivery.users;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Restaurant extends Person{
+public class Restaurant extends Person <String>{
 
     private static final Logger LOGGER = LogManager.getLogger(Restaurant.class);
 
-    public Restaurant(String name, Object contactInfo) {
+    public Restaurant(String name, String contactInfo) {
+
         super(name, contactInfo);
     }
 

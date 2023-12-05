@@ -1,6 +1,6 @@
 package com.solvd.foodDelivery.order;
 
-import com.solvd.foodDelivery.food.FoodItem;
+import com.solvd.foodDelivery.food.FoodItems;
 import com.solvd.foodDelivery.payment.Payment;
 import com.solvd.foodDelivery.payment.StateTax;
 import com.solvd.foodDelivery.users.Customer;
@@ -16,16 +16,20 @@ public class FastFoodOrder extends Order{
         super(customer);
     }
 
-    public FastFoodOrder(List<FoodItem> foodItems, int quantity) {
-        super(foodItems, quantity);
+    public FastFoodOrder(List<FoodItems> foodItems) {
+        super(foodItems);
     }
 
-    public FastFoodOrder(Payment payment) {
-        super(payment);
+    public FastFoodOrder(int quantity) {
+        super(quantity);
     }
 
     public FastFoodOrder(DeliveryPerson deliveryPerson) {
         super(deliveryPerson);
+    }
+
+    public FastFoodOrder(Payment payment) {
+        super(payment);
     }
 
     public FastFoodOrder(LocalDateTime orderTime) {
@@ -35,7 +39,7 @@ public class FastFoodOrder extends Order{
     @Override
     public double calculateTotal() {
         double total = 0;
-        for (FoodItem item : foodItems) {
+        for (FoodItems item : foodItems) {
             total += item.getFoodPrice();
         }
         return total * quantity + StateTax.STATE_TAX_7.calculateTax(total)+ DELIVERY_CHARGE;

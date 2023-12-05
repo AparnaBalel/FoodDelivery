@@ -1,10 +1,10 @@
 package com.solvd.foodDelivery.food;
 
-public class BreakFast implements FoodItem {
+public class FastFoodItems implements FoodItems {
     private String foodName;
     private double price;
 
-    public BreakFast(String foodName, double price) {
+    public FastFoodItems(String foodName, double price) {
         this.foodName = foodName;
         this.price = price;
     }
@@ -16,18 +16,6 @@ public class BreakFast implements FoodItem {
 
     @Override
     public double getFoodPrice() {
-        return generateRandomPrice(7, 15);
+        return generateRandomPrice(3,12);
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-

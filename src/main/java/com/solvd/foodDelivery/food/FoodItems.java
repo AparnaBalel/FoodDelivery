@@ -2,7 +2,7 @@ package com.solvd.foodDelivery.food;
 
 import java.util.Random;
 
-public  interface FoodItem{
+public  interface FoodItems {
      String getFoodName ();
      double getFoodPrice();
 

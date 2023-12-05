@@ -3,16 +3,20 @@ package com.solvd.foodDelivery.users;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public   class DeliveryPerson extends Person {
+public   class DeliveryPerson extends Person <String> {
 
     private static final Logger LOGGER = LogManager.getLogger(DeliveryPerson.class);
 
     private String vehicleNumber;
 
-    public DeliveryPerson(String name, Object contactInfo, String vehicleNumber ) {
-        super(name, contactInfo);
-        this.vehicleNumber = vehicleNumber;
+    public DeliveryPerson(String name, String  vehicleNumber) {
+        super(name, vehicleNumber);
     }
+
+    public DeliveryPerson(long phNumber) {
+        super(phNumber);
+    }
+
 
     public String getVehicleNumber() {
         return vehicleNumber;

@@ -1,11 +1,11 @@
 package com.solvd.foodDelivery.food;
 
 
-public class Lunch implements FoodItem {
+public class LunchItems implements FoodItems {
     private String foodName;
     private double price;
 
-    public Lunch(String foodName, double price) {
+    public LunchItems(String foodName) {
         this.foodName = foodName;
         this.price = price;
     }

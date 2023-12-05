@@ -4,11 +4,11 @@ import java.util.Scanner;
 public enum PaymentType {
     CREDIT_CARD(0.02),
     PAYPAL(0.01),
-    ZELLE(0.015),
-    GOOGLE_PAY(0.012),
-    APPLE_PAY(0.015);
+    ZELLE(0.015);
+
     private final double bankCharge;
     PaymentType(double bankCharge) {
+
         this.bankCharge = bankCharge;
     }
 

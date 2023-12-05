@@ -20,7 +20,7 @@ public class PayPal implements Payment{
     }
 
     @Override
-    public void Payment(double amount) {
+    public void makePayment(double amount) {
         LOGGER.info("Processing PayPal payment of $" + amount);
         LOGGER.info("PayPal Email: " + email);
     }

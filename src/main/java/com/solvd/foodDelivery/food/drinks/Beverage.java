@@ -1,0 +1,26 @@
+package com.solvd.foodDelivery.food.drinks;
+
+import com.solvd.foodDelivery.food.FoodItems;
+
+public class Beverage implements FoodItems {
+    private String beverageName;
+    private DrinkSize drinkSize;
+
+    public Beverage(String beverageName, DrinkSize drinkSize) {
+        this.beverageName = beverageName;
+        this.drinkSize = drinkSize;
+    }
+    @Override
+    public String getFoodName() {
+
+        return beverageName;
+    }
+
+    @Override
+    public double getFoodPrice() {
+
+        return drinkSize.getPrice();
+    }
+
+
+}

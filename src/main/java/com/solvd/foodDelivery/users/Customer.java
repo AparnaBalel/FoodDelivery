@@ -1,15 +1,17 @@
 package com.solvd.foodDelivery.users;
 
-
-import com.solvd.foodDelivery.order.FoodDelivery;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public  class Customer extends Person {
+public  class Customer extends Person <String>{
     private static final Logger LOGGER = LogManager.getLogger(Customer.class);
 
-    public Customer(String name, Object contactInfo) {
-        super(name, contactInfo);
+    public Customer(String name, String contactInfo) {
+        super(name,  contactInfo);
+    }
+
+    public Customer(long phNumber) {
+        super(phNumber);
     }
 
     @Override

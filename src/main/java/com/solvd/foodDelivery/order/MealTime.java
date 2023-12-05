@@ -2,7 +2,7 @@ package com.solvd.foodDelivery.order;
 
 import java.time.LocalTime;
 
-public enum CurrentTime {
+public enum MealTime {
 
     BREAKFAST(LocalTime.of(7, 0), LocalTime.of(11, 0)),
     LUNCH(LocalTime.of(11, 0), LocalTime.of(15, 0)),
@@ -12,7 +12,7 @@ public enum CurrentTime {
     private final LocalTime startTime;
     private final LocalTime endTime;
 
-    CurrentTime(LocalTime startTime, LocalTime endTime) {
+    MealTime(LocalTime startTime, LocalTime endTime) {
         this.startTime = startTime;
         this.endTime = endTime;
     }

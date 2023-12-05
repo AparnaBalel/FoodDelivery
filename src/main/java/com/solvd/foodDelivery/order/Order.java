@@ -1,23 +1,20 @@
 package com.solvd.foodDelivery.order;
 
-import com.solvd.foodDelivery.payment.StateTax;
 import com.solvd.foodDelivery.users.DeliveryPerson;
-import com.solvd.foodDelivery.food.FoodItem;
+import com.solvd.foodDelivery.food.FoodItems;
 import com.solvd.foodDelivery.payment.Payment;
-import com.solvd.foodDelivery.payment.Zelle;
 import com.solvd.foodDelivery.users.Customer;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.text.SimpleDateFormat;
 import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
 public abstract class Order {
     private static final Logger LOGGER = LogManager.getLogger(Order.class);
     protected Customer customer;
-    protected List<FoodItem> foodItems;
+    protected List<FoodItems> foodItems;
     protected  int quantity;
     protected Payment payment;
     protected DeliveryPerson deliveryPerson;
@@ -26,10 +23,15 @@ public abstract class Order {
     public Order(Customer customer) {
         this.customer = customer;
     }
-    public Order(List<FoodItem> foodItems, int quantity) {
+
+    public Order(List<FoodItems> foodItems) {
         this.foodItems = foodItems;
+    }
+
+    public Order(int quantity) {
         this.quantity = quantity;
     }
+
     public Order(DeliveryPerson deliveryPerson) {
         this.deliveryPerson = deliveryPerson;
     }
@@ -53,11 +55,11 @@ public abstract class Order {
         this.customer = customer;
     }
 
-    public List<FoodItem> getFoodItems() {
+    public List<FoodItems> getFoodItems() {
         return foodItems;
     }
 
-    public void setFoodItems(List<FoodItem> foodItems) {
+    public void setFoodItems(List<FoodItems> foodItems) {
         this.foodItems = foodItems;
     }
 
@@ -87,14 +89,14 @@ public abstract class Order {
     public abstract double calculateTotal();
 
     public void processPayment() {
-        payment.Payment(calculateTotal());
+        payment.makePayment(calculateTotal());
     }
 
     public void displayOrderDetails() {
 
         LOGGER.info("Customer detail " + customer );
         LOGGER.info("Your total Order:");
-        for (FoodItem item : foodItems) {
+        for (FoodItems item : foodItems) {
             LOGGER.info(item.getFoodName());
         }
         LOGGER.info("Quantity: " + quantity);

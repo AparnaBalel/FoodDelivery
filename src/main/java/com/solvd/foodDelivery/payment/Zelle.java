@@ -3,27 +3,23 @@ package com.solvd.foodDelivery.payment;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-public class Zelle implements Payment{
+public class Zelle <T>implements Payment{
 
     private static final Logger LOGGER = LogManager.getLogger(Zelle.class);
 
-    private String phoneNumber;
+private T recipient;
 
-    public Zelle(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public String getPhoneNumber() {
-        return phoneNumber;
-    }
-
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+    public Zelle( T recipient) {
+        if ((recipient instanceof String) && ((String) recipient).matches("[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}")
+                || ((String) recipient).matches("\\d{10}")) {
+            this.recipient = recipient;
+        } else {
+            throw new IllegalArgumentException("Invalid Zelle payment information");
+        }
     }
 
     @Override
-    public void Payment(double amount) {
-        LOGGER.info("Processing Zelle payment of $" + amount);
-        LOGGER.info("Phone Number: " + phoneNumber);
+    public void makePayment(double amount) {
+
     }
 }

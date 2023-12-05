@@ -1,10 +1,10 @@
 package com.solvd.foodDelivery.food;
 
-public class Dinner implements FoodItem{
+public class DinnerItems implements FoodItems {
     private String foodName;
     private double price;
 
-    public Dinner(String foodName, double price) {
+    public DinnerItems(String foodName, double price) {
         this.foodName = foodName;
         this.price = price;
     }
