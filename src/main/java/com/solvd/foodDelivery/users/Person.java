@@ -4,18 +4,16 @@ public abstract class Person<T> {
     private String name;
     private T contactInfo;
     private long  phNumber;
-
     public Person(String name, T contactInfo) {
         this.name = name;
         this.contactInfo = contactInfo;
     }
-
     public Person(long  phNumber) {
         if (String.valueOf(phNumber).length() == 10) {
             this.phNumber = phNumber;
         }
         else {
-            throw new IllegalArgumentException("Invalid phone number. Must be a 10-digit numeric value.");
+            throw new IllegalArgumentException("Invalid phone number");
         }
     }
 

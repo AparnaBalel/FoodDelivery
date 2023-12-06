@@ -1,6 +1,7 @@
 package com.solvd.foodDelivery.order;
 
 import com.solvd.foodDelivery.food.FoodItems;
+import com.solvd.foodDelivery.food.drinks.Beverage;
 import com.solvd.foodDelivery.payment.Payment;
 import com.solvd.foodDelivery.payment.StateTax;
 import com.solvd.foodDelivery.users.Customer;
@@ -11,12 +12,18 @@ import java.util.List;
 
 public class LunchOrder extends  Order{
     private static final double DELIVERY_CHARGE = 5.0;
+    private Beverage beverage;
 
     public LunchOrder(Customer customer) {
         super(customer);
     }
+    public void setFoodItems(List<FoodItems> foodItems) {
+        this.foodItems = foodItems;
+    }
 
-
+    public void setBeverage(Beverage beverage) {
+        this.beverage = beverage;
+    }
     public LunchOrder(List<FoodItems> foodItems) {
         super(foodItems);
     }
@@ -37,14 +44,18 @@ public class LunchOrder extends  Order{
         super(orderTime);
     }
 
-
+    public LunchOrder() {
+        super();
+    }
     @Override
     public double calculateTotal() {
-        double total = 0;
-        for (FoodItems item : foodItems) {
-            total += item.getFoodPrice();
-        }
-        return total * quantity + StateTax.STATE_TAX_7.calculateTax(total)+ DELIVERY_CHARGE;
+        double foodItemsTotal = 0;
+        double tax = 0;
+        if (foodItems != null) {
+          foodItemsTotal = foodItems.stream().mapToDouble(FoodItems::getFoodPrice).sum();
+           tax = StateTax.STATE_TAX_7.calculateTax(foodItemsTotal);
+    }
+        return foodItemsTotal + tax + DELIVERY_CHARGE;
     }
 
 }

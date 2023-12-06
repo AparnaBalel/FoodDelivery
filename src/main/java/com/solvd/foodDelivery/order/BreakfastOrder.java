@@ -39,8 +39,10 @@ public class BreakfastOrder extends Order{
     @Override
     public double calculateTotal() {
         double total = 0;
-        for (FoodItems item : foodItems) {
-            total += item.getFoodPrice();
+        if (foodItems != null) {
+            for (FoodItems item : foodItems) {
+                total += item.getFoodPrice();
+            }
         }
         return total * quantity + StateTax.STATE_TAX_7.calculateTax(total)+ DELIVERY_CHARGE;
     }

@@ -3,7 +3,6 @@ package com.solvd.foodDelivery.order;
 import java.time.LocalTime;
 
 public enum MealTime {
-
     BREAKFAST(LocalTime.of(7, 0), LocalTime.of(11, 0)),
     LUNCH(LocalTime.of(11, 0), LocalTime.of(15, 0)),
     DINNER(LocalTime.of(17, 0), LocalTime.of(22, 0)),

@@ -18,4 +18,14 @@ public class FastFoodItems implements FoodItems {
     public double getFoodPrice() {
         return generateRandomPrice(3,12);
     }
+
+    @Override
+    public int getQuantity() {
+        return 0;
+    }
+
+    @Override
+    public double generateRandomPrice(double min, double max) {
+        return FoodItems.super.generateRandomPrice(min, max);
+    }
 }

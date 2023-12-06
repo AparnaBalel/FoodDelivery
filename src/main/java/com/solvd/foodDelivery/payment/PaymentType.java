@@ -1,7 +1,12 @@
 package com.solvd.foodDelivery.payment;
 
+import com.solvd.foodDelivery.order.FoodDelivery;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import java.util.Scanner;
 public enum PaymentType {
+
     CREDIT_CARD(0.02),
     PAYPAL(0.01),
     ZELLE(0.015);
@@ -11,7 +16,7 @@ public enum PaymentType {
 
         this.bankCharge = bankCharge;
     }
-
+    private static final Logger LOGGER = LogManager.getLogger(PaymentType.class);
     public double getBankCharge() {
         return bankCharge;
     }
@@ -19,13 +24,13 @@ public enum PaymentType {
         Scanner scanner = new Scanner(System.in);
         PaymentType choice = null;
 
-        System.out.println("How would you like to pay?");
+        LOGGER.info("How would you like to pay?");
         for (PaymentType type : values()) {
             System.out.println(type.name());
         }
 
         while (choice == null) {
-            System.out.print("Enter your payment method: ");
+            LOGGER.info("Enter your payment method: ");
             String input = scanner.nextLine().toUpperCase();
 
             for (PaymentType type : values()) {
@@ -35,7 +40,7 @@ public enum PaymentType {
                 }
             }
             if (choice == null) {
-                System.out.println("Invalid choice. Please enter a valid payment method.");
+                LOGGER.info("Invalid choice. Please enter a valid payment method.");
             }
         }
         return choice;

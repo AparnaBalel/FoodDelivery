@@ -20,6 +20,7 @@ public abstract class Order {
     protected DeliveryPerson deliveryPerson;
     private LocalDateTime orderTime;
 
+
     public Order(Customer customer) {
         this.customer = customer;
     }
@@ -37,6 +38,10 @@ public abstract class Order {
     }
     public Order(Payment payment) {
         this.payment = payment;
+    }
+
+    public Order() {
+
     }
 
     public DeliveryPerson getDeliveryPerson() {
@@ -89,21 +94,33 @@ public abstract class Order {
     public abstract double calculateTotal();
 
     public void processPayment() {
-        payment.makePayment(calculateTotal());
+        if (payment != null) {
+            payment.makePayment(calculateTotal());
+        } else {
+            LOGGER.warn("Payment not provided. Cannot process payment.");
+        }
     }
 
     public void displayOrderDetails() {
-
-        LOGGER.info("Customer detail " + customer );
-        LOGGER.info("Your total Order:");
-        for (FoodItems item : foodItems) {
-            LOGGER.info(item.getFoodName());
+        if (customer != null) {
+            LOGGER.info("Customer details: " + customer);
         }
-        LOGGER.info("Quantity: " + quantity);
-        LOGGER.info("Total Price: $" + calculateTotal());
-        LOGGER.info("Payment Method: " + payment.getClass().getSimpleName());
-        LOGGER.info("Delivery Person " + deliveryPerson);
-        LOGGER.info("Order Time: " + orderTime);
+        LOGGER.info("Your total Order:");
+        if (foodItems != null) {
+            foodItems.forEach(item -> LOGGER.info(item.getFoodName()));
+            LOGGER.info("Quantity: " + quantity);
+            LOGGER.info("Total Price: $" + calculateTotal());
+            if (payment != null) {
+                LOGGER.info("Payment Method: " + payment.getClass().getSimpleName());
+            }
+            if (deliveryPerson != null) {
+                LOGGER.info("Delivery Person " + deliveryPerson);
+            }
+
+            if (orderTime != null) {
+                LOGGER.info("Order Time: " + orderTime);
+            }
+        }
     }
     public LocalDateTime waitTime() {
         Calendar cal = Calendar.getInstance();
