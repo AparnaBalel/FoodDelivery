@@ -15,6 +15,7 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.LocalTime;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -137,11 +138,9 @@ public class FoodDelivery {
         }
     }
     private static MealTime getCurrentTime(LocalTime currentTime) {
-        for (MealTime period : MealTime.values()) {
-            if (period.isInTimeRange(currentTime)) {
-                return period;
-            }
-        }
-        return MealTime.FAST_FOOD;
+        return Arrays.stream(MealTime.values())
+                .filter(period -> period.isInTimeRange(currentTime))
+                .findFirst()
+                .orElse(MealTime.FAST_FOOD);
     }
 }
