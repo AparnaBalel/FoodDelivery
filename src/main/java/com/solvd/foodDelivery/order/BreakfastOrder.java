@@ -12,30 +12,8 @@ import java.util.List;
 public class BreakfastOrder extends Order{
     private static final double DELIVERY_CHARGE = 5.0;
 
-    public BreakfastOrder(Customer customer) {
-        super(customer);
+    public BreakfastOrder() {
     }
-
-    public BreakfastOrder(List<FoodItems> foodItems) {
-        super(foodItems);
-    }
-
-    public BreakfastOrder(int quantity) {
-        super(quantity);
-    }
-
-    public BreakfastOrder(DeliveryPerson deliveryPerson) {
-        super(deliveryPerson);
-    }
-
-    public BreakfastOrder(Payment payment) {
-        super(payment);
-    }
-
-    public BreakfastOrder(LocalDateTime orderTime) {
-        super(orderTime);
-    }
-
     @Override
     public double calculateTotal() {
         double total = 0;

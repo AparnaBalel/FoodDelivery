@@ -39,7 +39,6 @@ public class CreditCard implements Payment {
         this.expiryDate = expiryDate;
     }
 
-
     private boolean ValidCardNumber(String cardNumber){
         return  cardNumber.matches("\\d{16}");
     }

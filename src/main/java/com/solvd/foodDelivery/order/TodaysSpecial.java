@@ -5,12 +5,10 @@ public enum TodaysSpecial {
     LUNCH("Classic Cheeseburger", "BBQ Pulled Pork Sandwich", "Chicken and Waffles", "Grilled Cheese and Tomato Soup Combo"),
     DINNER("Herb-Roasted Chicken", "Grilled Salmon with Lemon Butter Sauce", "Chicken Alfredo Pasta", "Vegetarian Stuffed Bell Peppers"),
     FAST_FOOD("Fast Food Special", "Cheeseburger", "French Fries", "Soda");
-
     private final String mainCourse1;
     private final String mainCourse2;
     private final String mainCourse3;
     private final String mainCourse4;
-
     TodaysSpecial( String mainCourse1, String mainCourse2, String mainCourse3, String mainCourse4) {
         this.mainCourse1 = mainCourse1;
         this.mainCourse2 = mainCourse2;

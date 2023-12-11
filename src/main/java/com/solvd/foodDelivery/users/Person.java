@@ -16,12 +16,11 @@ public abstract class Person<T> {
             throw new IllegalArgumentException("Invalid phone number");
         }
     }
-
     public long  getPhNumber() {
         return phNumber;
     }
 
-    public void setPhNumber(int phNumber) {
+    public void setPhNumber(long phNumber) {
         this.phNumber = phNumber;
     }
 

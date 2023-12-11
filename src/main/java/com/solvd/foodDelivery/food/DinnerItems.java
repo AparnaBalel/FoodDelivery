@@ -1,5 +1,7 @@
 package com.solvd.foodDelivery.food;
 
+import java.util.Random;
+
 public class DinnerItems implements FoodItems {
     private String foodName;
     private int quantity;
@@ -18,12 +20,8 @@ public class DinnerItems implements FoodItems {
         return generateRandomPrice(12,22);
     }
 
-    @Override
-    public int getQuantity() {
-        return 0;
-    }
-    @Override
-    public double generateRandomPrice(double min, double max) {
-        return FoodItems.super.generateRandomPrice(min, max);
+    public static double generateRandomPrice(double min, double max) {
+        Random random = new Random();
+        return min + (max - min) * random.nextDouble();
     }
 }

@@ -1,11 +1,10 @@
 package com.solvd.foodDelivery.food;
 
-
+import java.util.Random;
 public class LunchItems implements FoodItems {
     private String foodName;
     private double price;
     private int quantity;
-
     public LunchItems(String foodName,int quantity) {
         this.foodName = foodName;
         this.quantity = quantity;
@@ -20,14 +19,9 @@ public class LunchItems implements FoodItems {
         return generateRandomPrice(10,20);
     }
 
-    @Override
-    public int getQuantity() {
-        return quantity;
+    public static double generateRandomPrice(double min, double max) {
+        Random random = new Random();
+        return min + (max - min) * random.nextDouble();
     }
-    @Override
-    public double generateRandomPrice(double min, double max) {
-        return FoodItems.super.generateRandomPrice(min, max);
-    }
-
 
 }

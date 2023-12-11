@@ -1,5 +1,6 @@
 package com.solvd.foodDelivery.order;
 
+import com.solvd.foodDelivery.food.drinks.Beverage;
 import com.solvd.foodDelivery.users.DeliveryPerson;
 import com.solvd.foodDelivery.food.FoodItems;
 import com.solvd.foodDelivery.payment.Payment;
@@ -20,7 +21,6 @@ public abstract class Order {
     protected DeliveryPerson deliveryPerson;
     private LocalDateTime orderTime;
 
-
     public Order(Customer customer) {
         this.customer = customer;
     }
@@ -39,11 +39,8 @@ public abstract class Order {
     public Order(Payment payment) {
         this.payment = payment;
     }
-
     public Order() {
-
     }
-
     public DeliveryPerson getDeliveryPerson() {
         return deliveryPerson;
     }
@@ -63,7 +60,6 @@ public abstract class Order {
     public List<FoodItems> getFoodItems() {
         return foodItems;
     }
-
     public void setFoodItems(List<FoodItems> foodItems) {
         this.foodItems = foodItems;
     }
@@ -100,7 +96,6 @@ public abstract class Order {
             LOGGER.warn("Payment not provided. Cannot process payment.");
         }
     }
-
     public void displayOrderDetails() {
         if (customer != null) {
             LOGGER.info("Customer details: " + customer);
@@ -126,7 +121,9 @@ public abstract class Order {
         Calendar cal = Calendar.getInstance();
         SimpleDateFormat sdf = new SimpleDateFormat("M/d/yyy hh:mm:ss");
         cal.add(Calendar.MINUTE, 10);
-        LOGGER.info(sdf.format(cal.getTime()));
+        LOGGER.info("delivery time" + sdf.format(cal.getTime()));
         return null;
+    }
+    public void setBeverage(Beverage beverage) {
     }
 }

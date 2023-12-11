@@ -24,7 +24,6 @@ public class  PayPal implements Payment{
             throw new IllegalArgumentException("please Enter valid Email Id");
         }
     }
-
     private boolean ValidEmail(String email) {
         String emailRegex = "^[a-zA-Z0-9_+&*-]+(?:\\.[a-zA-Z0-9_+&*-]+)*@(?:[a-zA-Z0-9-]+\\.)+[a-zA-Z]{2,7}$";
         return Pattern.matches(emailRegex, email);

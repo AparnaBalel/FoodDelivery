@@ -6,7 +6,6 @@ public class Beverage implements FoodItems {
     private String beverageName;
     private DrinkSize drinkSize;
     private int quantity;
-
     public Beverage(String beverageName, DrinkSize drinkSize,int quantity) {
         this.beverageName = beverageName;
         this.drinkSize = drinkSize;
@@ -17,22 +16,12 @@ public class Beverage implements FoodItems {
 
         return beverageName;
     }
-
     @Override
     public double getFoodPrice() {
-
         return drinkSize.getPrice();
     }
-
-    @Override
-    public int getQuantity() {
-        return quantity;
+    public void setBeverageName(String beverageName) {
+        this.beverageName = beverageName;
     }
-
-    @Override
-    public double generateRandomPrice(double min, double max) {
-        return FoodItems.super.generateRandomPrice(min, max);
-    }
-
 
 }
