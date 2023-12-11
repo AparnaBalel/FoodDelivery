@@ -20,82 +20,24 @@ public abstract class Order {
     protected Payment payment;
     protected DeliveryPerson deliveryPerson;
     private LocalDateTime orderTime;
-
-    public Order(Customer customer) {
-        this.customer = customer;
-    }
-
-    public Order(List<FoodItems> foodItems) {
-        this.foodItems = foodItems;
-    }
-
-    public Order(int quantity) {
-        this.quantity = quantity;
-    }
-
-    public Order(DeliveryPerson deliveryPerson) {
-        this.deliveryPerson = deliveryPerson;
-    }
-    public Order(Payment payment) {
-        this.payment = payment;
-    }
     public Order() {
     }
     public DeliveryPerson getDeliveryPerson() {
         return deliveryPerson;
     }
-
-    public Order(LocalDateTime orderTime) {
-        this.orderTime = LocalDateTime.now();
-    }
-
-    public Customer getCustomer() {
-        return customer;
-    }
-
     public void setCustomer(Customer customer) {
         this.customer = customer;
-    }
-
-    public List<FoodItems> getFoodItems() {
-        return foodItems;
     }
     public void setFoodItems(List<FoodItems> foodItems) {
         this.foodItems = foodItems;
     }
-
     public LocalDateTime getOrderTime() {
         return orderTime;
     }
-
-    public void setOrderTime(LocalDateTime orderTime) {
-        this.orderTime = orderTime;
-    }
-
     public int getQuantity() {
         return quantity;
     }
-
-    public Payment getPayment() {
-        return payment;
-    }
-
-    public void setPayment(Payment payment) {
-        this.payment = payment;
-    }
-
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
-    }
     public abstract double calculateTotal();
-
-    public void processPayment() {
-        if (payment != null) {
-            payment.makePayment(calculateTotal());
-        } else {
-            LOGGER.warn("Payment not provided. Cannot process payment.");
-        }
-    }
     public void displayOrderDetails() {
         if (customer != null) {
             LOGGER.info("Customer details: " + customer);
@@ -124,6 +66,7 @@ public abstract class Order {
         LOGGER.info("delivery time" + sdf.format(cal.getTime()));
         return null;
     }
-    public void setBeverage(Beverage beverage) {
+
+    public void setPayment(Payment payment) {
     }
 }

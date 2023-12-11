@@ -10,6 +10,15 @@ public class FastFoodItems implements FoodItems {
         this.foodName = foodName;
         this.price = price;
     }
+
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
     @Override
     public String getFoodName() {
         return foodName;

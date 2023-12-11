@@ -1,11 +1,16 @@
+import com.solvd.foodDelivery.order.FoodDelivery;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.lang3.StringUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import java.io.*;
 import java.util.List;
 
 
 public class Main {
+    private static final Logger LOGGER = LogManager.getLogger(Main.class);
+
     public static void main(String[] args) {
 
         int totalWords = 0;
@@ -29,12 +34,12 @@ public class Main {
                 casesCount += StringUtils.countMatches(line.toString(), "cases");
                 ToCount += StringUtils.countMatches(line.toString(),"to");
 
-            System.out.println("To = " + ToCount);
-            System.out.println("QA = " + qaCount);
-            System.out.println("Cases = " + casesCount);
-            System.out.println("Quality = " + qualityCount);
-            System.out.println("Total line count: " + totalLine);
-            System.out.println("Total words count: " + totalWords);
+            LOGGER.info("To = " + ToCount);
+            LOGGER.info("QA = " + qaCount);
+            LOGGER.info("Cases = " + casesCount);
+            LOGGER.info("Quality = " + qualityCount);
+            LOGGER.info("Total line count: " + totalLine);
+            LOGGER.info("Total words count: " + totalWords);
             FileUtils.writeStringToFile(output, "To =" + ToCount + "\n" + "QA = " + qaCount +"\n" + "Cases = " + casesCount +"\n" +"Quality = " + qualityCount);
         } catch (IOException e) {
             throw new RuntimeException(e);

@@ -1,10 +1,10 @@
 package com.solvd.foodDelivery.order;
 
-public enum TodaysSpecial {
-    BREAKFAST("Spicy Poblano Omelette", "Scrambled Eggs with Bacon", "Breakfast Sampler", "Breakfast Burrito"),
-    LUNCH("Classic Cheeseburger", "BBQ Pulled Pork Sandwich", "Chicken and Waffles", "Grilled Cheese and Tomato Soup Combo"),
-    DINNER("Herb-Roasted Chicken", "Grilled Salmon with Lemon Butter Sauce", "Chicken Alfredo Pasta", "Vegetarian Stuffed Bell Peppers"),
-    FAST_FOOD("Fast Food Special", "Cheeseburger", "French Fries", "Soda");
+public class  TodaysSpecial {
+    static String [] BREAKFAST = {"Spicy Poblano Omelette, Scrambled Eggs with Bacon, Breakfast Sampler, Breakfast Burrito"};
+    static String [] LUNCH ={"Classic Cheeseburger, BBQ Pulled Pork Sandwich, Chicken and Waffles, Grilled Cheese and Tomato Soup Combo"};
+    static String [] DINNER = { "Herb-Roasted Chicken, Grilled Salmon with Lemon Butter Sauce, Chicken Alfredo Pasta, Vegetarian Stuffed Bell Peppers"};
+    static String [] FAST_FOOD = {"Fast Food Special, Cheeseburger, French Fries, Soda"};
     private final String mainCourse1;
     private final String mainCourse2;
     private final String mainCourse3;

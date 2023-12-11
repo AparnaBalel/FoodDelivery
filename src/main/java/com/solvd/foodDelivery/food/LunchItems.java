@@ -9,6 +9,19 @@ public class LunchItems implements FoodItems {
         this.foodName = foodName;
         this.quantity = quantity;
     }
+
+    public void setFoodName(String foodName) {
+        this.foodName = foodName;
+    }
+
+    public void setPrice(double price) {
+        this.price = price;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String getFoodName() {
         return foodName;

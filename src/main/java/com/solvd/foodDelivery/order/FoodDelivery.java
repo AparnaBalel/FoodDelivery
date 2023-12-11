@@ -15,7 +15,6 @@ import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.time.LocalTime;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
 
@@ -45,7 +44,7 @@ public class FoodDelivery {
                 LOGGER.info("do you want to order any FastFood?");
                 break;
             default:
-                System.out.println("Unexpected time period.");
+                LOGGER.info("Unexpected time period.");
         }
 
         LOGGER.info( " Take a look for Today's Special ");
@@ -93,7 +92,7 @@ public class FoodDelivery {
        List<FoodItems> foodItemsList = new ArrayList<>();
         foodItemsList.add(new LunchItems("Sandwich", 2));
         foodItemsList.add(new LunchItems("Salad",1));
-        String className ="com.solvd.foodDelivery.order.LunchOrder";
+        String className ="order.LunchOrder";
         try {
             Class<LunchOrder> lunchOrderClass;
             lunchOrderClass = (Class<LunchOrder>) Class.forName(className);
@@ -116,26 +115,23 @@ public class FoodDelivery {
         }
     }
     private static Payment createPayment(PaymentType paymentType) {
-        Scanner scanner = new Scanner(System.in);
-
         switch (paymentType) {
             case CREDIT_CARD:
                 LOGGER.info("Enter your credit card number: ");
-                String cardNumber = scanner.nextLine();
+                String cardNumber = scan.nextLine();
                 LOGGER.info("Enter your card's expiry date (MM/YY): ");
-                String expiryDate = scanner.nextLine();
+                String expiryDate = scan.nextLine();
                 return new CreditCard(cardNumber, expiryDate);
 
             case PAYPAL:
                 LOGGER.info("Enter your PayPal email: ");
-                String paypalEmail = scanner.nextLine();
+                String paypalEmail = scan.nextLine();
                 return new PayPal(paypalEmail);
 
             case ZELLE:
                 LOGGER.info("Enter your Zelle email or phone number: ");
-                String zelleInfo = scanner.nextLine();
+                String zelleInfo = scan.nextLine();
                 return new Zelle<>(zelleInfo);
-
             default:
                 throw new IllegalArgumentException("Invalid payment method");
         }

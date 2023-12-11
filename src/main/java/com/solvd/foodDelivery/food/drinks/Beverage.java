@@ -11,6 +11,20 @@ public class Beverage implements FoodItems {
         this.drinkSize = drinkSize;
         this.quantity = quantity;
     }
+
+
+    public void setDrinkSize(DrinkSize drinkSize) {
+        this.drinkSize = drinkSize;
+    }
+
+    public int getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+
     @Override
     public String getFoodName() {
 
@@ -21,6 +35,7 @@ public class Beverage implements FoodItems {
         return drinkSize.getPrice();
     }
     public void setBeverageName(String beverageName) {
+
         this.beverageName = beverageName;
     }
 
