@@ -12,7 +12,6 @@ public class CreditCard implements Payment {
     private static final String DATE_FORMAT = "MM/yy";
     private String cardNumber;
     private String expiryDate;
-
     public CreditCard(String cardNumber, String expiryDate) {
         if(ValidCardNumber(cardNumber)&& ValidDate(expiryDate)) {
             this.cardNumber = cardNumber;
@@ -22,7 +21,6 @@ public class CreditCard implements Payment {
             throw new IllegalArgumentException("invalid card");
         }
     }
-
     public String getCardNumber() {
         return cardNumber;
     }

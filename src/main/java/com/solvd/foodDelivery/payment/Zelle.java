@@ -2,13 +2,10 @@ package com.solvd.foodDelivery.payment;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-
 import java.util.regex.Pattern;
-
 public class Zelle <T>implements Payment{
     private static final Logger LOGGER = LogManager.getLogger(Zelle.class);
 private T recipient;
-
     public Zelle( T recipient) {
         if (isValidRecipient(recipient)) {
             this.recipient = recipient;

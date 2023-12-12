@@ -1,7 +1,14 @@
 package com.solvd.foodDelivery.order;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import java.util.Arrays;
+
 public class  TodaysSpecial {
+    private static final Logger LOGGER = LogManager.getLogger(Order.class);
     static String [] BREAKFAST = {"Spicy Poblano Omelette, Scrambled Eggs with Bacon, Breakfast Sampler, Breakfast Burrito"};
+
     static String [] LUNCH ={"Classic Cheeseburger, BBQ Pulled Pork Sandwich, Chicken and Waffles, Grilled Cheese and Tomato Soup Combo"};
     static String [] DINNER = { "Herb-Roasted Chicken, Grilled Salmon with Lemon Butter Sauce, Chicken Alfredo Pasta, Vegetarian Stuffed Bell Peppers"};
     static String [] FAST_FOOD = {"Fast Food Special, Cheeseburger, French Fries, Soda"};

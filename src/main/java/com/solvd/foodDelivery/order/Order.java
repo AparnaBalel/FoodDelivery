@@ -22,6 +22,16 @@ public abstract class Order {
     private LocalDateTime orderTime;
     public Order() {
     }
+    public void setOrderTime(LocalDateTime orderTime) {
+        this.orderTime = orderTime;
+    }
+    public void setQuantity(int quantity) {
+        this.quantity = quantity;
+    }
+    public void setDeliveryPerson(DeliveryPerson deliveryPerson) {
+        this.deliveryPerson = deliveryPerson;
+    }
+
     public DeliveryPerson getDeliveryPerson() {
         return deliveryPerson;
     }

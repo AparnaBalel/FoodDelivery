@@ -8,11 +8,9 @@ import java.util.regex.Pattern;
 public class  PayPal implements Payment{
     private static final Logger LOGGER = LogManager.getLogger(PayPal.class);
     private String email;
-
     public PayPal(String email) {
         this.email = email;
     }
-
     public String getEmail() {
         return email;
     }

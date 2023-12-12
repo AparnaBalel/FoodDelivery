@@ -13,6 +13,7 @@ import org.apache.logging.log4j.Logger;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -29,17 +30,16 @@ public class FoodDelivery {
         MealTime orderTime = getCurrentTime(currentTime);
         switch (orderTime) {
             case BREAKFAST:
-                LOGGER.info(TodaysSpecial.BREAKFAST.toString());
+                Arrays.stream(TodaysSpecial.BREAKFAST).forEach(b-> LOGGER.info(b));
                 LOGGER.info("what would you like to  order for Breakfast?");
                 break;
             case LUNCH:
-                LOGGER.info(TodaysSpecial.LUNCH.toString());
+                Arrays.stream(TodaysSpecial.LUNCH).forEach(l-> LOGGER.info(l));
                 LOGGER.info("what would you like to order for Lunch?");
                 break;
             case DINNER:
-                LOGGER.info(TodaysSpecial.DINNER.toString());
+                Arrays.stream(TodaysSpecial.DINNER).forEach(d-> LOGGER.info(d));
                 LOGGER.info("what would you like to order for Dinner?");
-
                 break;
             case FAST_FOOD:
                 LOGGER.info("do you want to order any FastFood?");
@@ -80,13 +80,13 @@ public class FoodDelivery {
         Order lunchOrder1 =new LunchOrder();
 
         lunchOrder1.setFoodItems(lunchOrder);
-        lunchOrder1.getQuantity();
+        lunchOrder1.setQuantity(totalQuantity);
         lunchOrder1.setCustomer(customerName);
         lunchOrder1.setCustomer(customerPh);
         lunchOrder1.setPayment(payment);
-        lunchOrder1.getDeliveryPerson();
-        lunchOrder1.getDeliveryPerson();
-        lunchOrder1.getOrderTime();
+        lunchOrder1.setDeliveryPerson(deliveryPerson);
+        lunchOrder1.setDeliveryPerson(deliveryPersonPHNumber);
+        lunchOrder1.setOrderTime(LocalDateTime.now());
         lunchOrder1.displayOrderDetails();
         lunchOrder1.waitTime();
 
